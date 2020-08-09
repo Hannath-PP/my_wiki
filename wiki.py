@@ -3,7 +3,7 @@ import os
 pages_path='pages/'
 def save_page(title,content):
 	file_name=title+'.txt'
-	file_path=pages_path+file_name
+	file_path=os.path.join(pages_path,file_name)
 
 	f=open(file_path,'w+')
 	f.write(content)
@@ -11,7 +11,7 @@ def save_page(title,content):
 
 def load_page(title):
 	file_name=title+'.txt'
-	file_path=pages_path+file_name
+	file_path=os.path.join(pages_path,file_name)
 
 	f=open(file_path,'r')
 	content=f.read()
